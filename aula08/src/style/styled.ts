@@ -168,6 +168,24 @@ export const ModalEditar = styled.dialog`
       font-size:20px;
       width: 70%;
     }
+    &
+    #btnCloseModal{
+      display:block;
+
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+
+      background-color: #333;
+      color: #fff;
+      border:5px solid #1C1C1C;
+      cursor:pointer;
+      font-size:20px;
+      float:right;
+      &:hover{
+        background-color: #555;
+      }
+    }
 
   }
 `

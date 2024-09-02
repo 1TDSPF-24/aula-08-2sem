@@ -3,6 +3,7 @@ import { TipoProdutos } from "../../types";
 import { useEffect } from "react";
 import { listaProdutos } from "../../listaProdutos";
 import { FaEdit as Editar } from "react-icons/fa";
+import { RiDeleteBin2Line as Excluir} from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 
@@ -29,7 +30,7 @@ export default function Produtos(){
               <th>Catergoria</th>
               <th>Descrição</th>
               <th>Foto</th>
-              <th>Editar</th>
+              <th>Editar | Excluir</th>
             </tr>
           </thead>
           <tbody>
@@ -41,7 +42,7 @@ export default function Produtos(){
                 <td>{produto.categoria}</td>
                 <td>{produto.descricao}</td>
                 <td><img src={produto.imagem} alt={produto.nome}/></td>
-                <td><Link to={`/editar/produtos/${produto.id}`}><Editar/></Link></td>
+                <td><Link to={`/editar/produtos/${produto.id}`}><Editar/></Link> | <Link to={`/editar/produtos/${produto.id}`}><Excluir/></Link></td>
 
               </tr>
             ))}

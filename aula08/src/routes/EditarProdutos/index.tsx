@@ -62,18 +62,27 @@ export default function EditarProdutos(){
         }
 
       }
+      
+      const [modal, setModal] = useState(true);
 
+      const isModal = () => {
+        setModal(modal ? false:true);
+        navigate("/produtos");
+      }
 
       return(
       <div>
         <h1>EditarProdutos!</h1>
         <div>
 
-            <ModalEditar open={true}>
+            <ModalEditar open={modal}>
 
           <div>
            
             <form onSubmit={handleSubmit}>
+              <div>
+                <button id="btnCloseModal" type="button" onClick={isModal}> X </button>
+              </div>
             <h2>Editar Produto</h2>
               <div>
                 <label>Nome:</label>
