@@ -52,15 +52,21 @@ export const MenuList = styled.ul`
 // Estilizando o item de lista
 export const MenuItem = styled.li`
   display: inline;
-`
 
-// Estilizando o item de link
-export const MenuLink = styled.a`
+  &
+  a{
   color:#fff;
   text-decoration: none;
   padding: 10px 20px;
   display: block;
+  text-decoration:none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  }
+
 `
+
 export const Imgs = styled.img`
   max-width: 100%;
   display: block;
@@ -186,6 +192,5 @@ export const ModalEditar = styled.dialog`
         background-color: #555;
       }
     }
-
   }
 `
