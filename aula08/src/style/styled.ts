@@ -28,9 +28,10 @@ export const Footer = styled.footer`
 `
 
 export const MainContent = styled.main`
-  padding: 20px;
-  margin-top: 60px; // Espaço para o Header
+  padding: 10px;
+  margin-top: 10px; // Espaço para o Header
   margin-bottom: 40px; // Espaço para o Footer
+  height:70vh;
 `
 
 // Estilizando o contêiner do menu
@@ -59,4 +60,10 @@ export const MenuLink = styled.a`
   text-decoration: none;
   padding: 10px 20px;
   display: block;
+`
+export const Imgs = styled.img`
+  max-width: 100%;
+  display: block;
+  width:10%;
+  margin:0 auto;
 `
