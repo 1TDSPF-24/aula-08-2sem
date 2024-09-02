@@ -5,7 +5,6 @@ import { Imgs } from "../../style/styled";
 
 export default function EditarProdutos(){
 
-
       //MUDANDO O TÍTULO DA PÁGINA!!!
       document.title = "EDITAR PRODUTOS";
 
