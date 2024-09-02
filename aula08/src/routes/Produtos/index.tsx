@@ -1,44 +1,11 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { MinhaTabela } from "../../style/styled";
 import { TipoProdutos } from "../../types";
 import { useEffect } from "react";
 import { listaProdutos } from "../../listaProdutos";
+import { FaEdit as Editar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
-const MinhaTabela = styled.table`
-  border-collapse: collapse;
-  width: 100%;
-  margin: 0 auto;
-  font-size:20px;
-  font-family: Arial, sans-serif;
-    &
-    img{
-      max-width: 100%;
-      display: block;
-      width:10%;
-      margin:0 auto;
-    }
-  
-      th,td{
-        text-align:center;
-        padding: 20px 0;
-        color:#fff;
-        border:2px solid #afafafaf;
-      }
-
-      th{
-        background-color: #333;
-      }
-      
-      & tr:nth-child(odd){
-        background-color: #676161;
-      }
-
-      & tr:nth-child(even){
-        background-color: #413d3d;
-      }
-  
-`
 export default function Produtos(){
       //MUDANDO O TÍTULO DA PÁGINA!!!
       document.title = "PRODUTOS";
@@ -74,7 +41,7 @@ export default function Produtos(){
                 <td>{produto.categoria}</td>
                 <td>{produto.descricao}</td>
                 <td><img src={produto.imagem} alt={produto.nome}/></td>
-                <td><Link to={`/editar/produtos/${produto.id}`}>Editar</Link></td>
+                <td><Link to={`/editar/produtos/${produto.id}`}><Editar/></Link></td>
 
               </tr>
             ))}

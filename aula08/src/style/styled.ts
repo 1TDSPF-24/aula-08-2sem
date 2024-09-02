@@ -67,3 +67,107 @@ export const Imgs = styled.img`
   width:10%;
   margin:0 auto;
 `
+
+
+export const MinhaTabela = styled.table`
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto;
+  font-size:20px;
+  font-family: Arial, sans-serif;
+    &
+    img{
+      max-width: 100%;
+      display: block;
+      width:10%;
+      margin:0 auto;
+    }
+  
+      th,td{
+        text-align:center;
+        padding: 20px 0;
+        color:#fff;
+        border:2px solid #afafafaf;
+      }
+
+      th{
+        background-color: #333;
+      }
+      
+      & tr:nth-child(odd){
+        background-color: #676161;
+      }
+
+      & tr:nth-child(even){
+        background-color: #413d3d;
+      }
+  
+`
+export const ColunaLink = styled.td`
+  text-align:center;
+  padding: 20px 0;
+  color:#fff;
+  border:2px solid #afafafaf;
+  background-color: #333;
+`
+
+export const ModalEditar = styled.dialog`
+  position: fixed;
+  top: 0 ;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  &
+  form{
+    width: 80%;
+    height: 80%;
+    margin: 3% auto;
+    background-color: #DCDCDC;
+    padding: 20px;
+    border:5px solid #1C1C1C;
+    border-radius: 10px;
+
+    &
+    button{
+      display:block;
+      margin: 0 auto;
+      width: 50%;
+      height: 10vh;
+      background-color: #333;
+      color: #fff;
+      border:5px solid #1C1C1C;
+      border-radius: 10px;
+      cursor:pointer;
+      font-size:20px;
+      
+      &:hover{
+        background-color: #555;
+      }
+    }
+    &
+    input{
+      display:block;
+      margin: 0 auto;
+      width: 70%;
+      height: 7vh;
+      background-color: #333;
+      color: #fff;
+      border:5px solid #c1c1c1;
+      border-radius: 10px;
+      cursor:pointer;
+      font-size:20px;
+      padding:0 1%;
+    }
+
+    &
+    label{
+      display:block;
+      margin: 1% auto;
+      font-size:20px;
+      width: 70%;
+    }
+
+  }
+`

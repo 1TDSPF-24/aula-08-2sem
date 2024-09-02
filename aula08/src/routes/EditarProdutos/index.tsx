@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavigateFunction, useNavigate, useParams } from "react-router-dom";
 import { TipoProdutos } from "../../types";
-import { Imgs } from "../../style/styled";
+import { Imgs, ModalEditar } from "../../style/styled";
 
 export default function EditarProdutos(){
 
@@ -35,8 +35,19 @@ export default function EditarProdutos(){
         if(produtoEncontrado) setProduto(produtoEncontrado);
       }, [id])
       
-      const handleSubmit = ()=>{
+
+      const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+        //Recebendo o destructuring através do evento e separando um único dado, para que seja reaproveitável!
+        const {name,value} = e.currentTarget;
+        setProduto({...produto,[name]:value})
+      }
+
+      const handleSubmit = (e:React.FormEvent<HTMLFormElement>)=>{
+        
+        e.preventDefault();
+
         let idProd:number;
+        
         if(produto){
           idProd = lista.findIndex(p => p.id == produto.id)
           lista.splice(idProd,1,produto);
@@ -52,28 +63,33 @@ export default function EditarProdutos(){
 
       }
 
+
       return(
       <div>
-        <h1>Olá, mundo sou o EditarProdutos!</h1>
+        <h1>EditarProdutos!</h1>
         <div>
-          <h2>ID: {id}</h2>
+
+            <ModalEditar open={true}>
+
           <div>
+           
             <form onSubmit={handleSubmit}>
+            <h2>Editar Produto</h2>
               <div>
                 <label>Nome:</label>
-                  <input type="text" value={produto.nome} onChange={(e) => setProduto({...produto, nome: e.target.value})} />
+                  <input type="text" name="nome" value={produto.nome} onChange={handleChange} />
               </div>
               <div>
                 <label>Preço:</label>
-                  <input type="number" value={produto.preco} onChange={(e) => setProduto({...produto, preco: Number(e.target.value)})} />
+                  <input type="number"  name="preco" value={produto.preco} onChange={handleChange} />
               </div>
               <div>
                 <label>Marca:</label>
-                  <input type="text" value={produto.marca} onChange={(e) => setProduto({...produto, marca: e.target.value})} />
+                  <input type="text" name="marca" value={produto.marca} onChange={handleChange} />
               </div>
               <div>
                 <label>Categoria:</label>
-                  <input type="text" value={produto.descricao} onChange={(e) => setProduto({...produto, descricao: e.target.value})} />
+                  <input type="text" name="categoria" value={produto.descricao} onChange={handleChange} />
               </div>
               <div>
                 <figure>
@@ -85,8 +101,46 @@ export default function EditarProdutos(){
               </div>
             </form>
           </div>
-
+          </ModalEditar>
         </div>
       </div>
     );
   }
+
+  // return(
+  //   <div>
+  //     <h1>Olá, mundo sou o EditarProdutos!</h1>
+  //     <div>
+  //       <h2>ID: {id}</h2>
+  //       <div>
+  //         <form onSubmit={handleSubmit}>
+  //           <div>
+  //             <label>Nome:</label>
+  //               <input type="text" name="nome" value={produto.nome} onChange={(e) => setProduto({...produto, nome: e.target.value})} />
+  //           </div>
+  //           <div>
+  //             <label>Preço:</label>
+  //               <input type="number"  name="preco" value={produto.preco} onChange={(e) => setProduto({...produto, preco: Number(e.target.value)})} />
+  //           </div>
+  //           <div>
+  //             <label>Marca:</label>
+  //               <input type="text" name="marca" value={produto.marca} onChange={(e) => setProduto({...produto, marca: e.target.value})} />
+  //           </div>
+  //           <div>
+  //             <label>Categoria:</label>
+  //               <input type="text" name="categoria" value={produto.descricao} onChange={(e) => setProduto({...produto, descricao: e.target.value})} />
+  //           </div>
+  //           <div>
+  //             <figure>
+  //               <Imgs src={produto?.imagem} alt={produto.nome} />
+  //             </figure>
+  //           </div>
+  //           <div>
+  //             <button type="submit">Editar</button>
+  //           </div>
+  //         </form>
+  //       </div>
+
+  //     </div>
+  //   </div>
+  // );
