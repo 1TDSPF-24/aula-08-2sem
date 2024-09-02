@@ -1,13 +1,13 @@
 
 
-export default function Error(){
+export default function Error() {
 
-      //MUDANDO O TÍTULO DA PÁGINA!!!
-      document.title = "Erro 404";
+  //MUDANDO O TÍTULO DA PÁGINA!!!
+  document.title = "Erro 404";
 
-    return(
-      <div>
-        <h1>Olá, mundo sou o Error!</h1>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h1>Olá, mundo sou o 404!</h1>
+    </div>
+  );
+}

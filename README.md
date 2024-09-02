@@ -2,3 +2,4 @@
 Estilização com styled-components, css.module e SASS, utilizando Hooks.
 - Async-Await
 - APIs
+- list/routes
